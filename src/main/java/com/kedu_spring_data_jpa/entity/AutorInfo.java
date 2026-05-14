@@ -1,4 +1,4 @@
-package com.kedu.demo_spring_rev_jpa.entity;
+package com.kedu_spring_data_jpa.entity;
 
 import jakarta.persistence.*;
 
@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-public class InfoAutor implements Serializable {
+public class AutorInfo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,11 @@ public class InfoAutor implements Serializable {
 
     @Column(name = "bio", length = 255, nullable = true)
     private String bio;
+
+    @Column(name = "empresa", length = 45, nullable = false)
+    private String empresa;
+
+    public void setId(Long id) { this.id = id; };
 
     public Long getId() {
         return id;
@@ -38,11 +43,19 @@ public class InfoAutor implements Serializable {
         this.cargo = cargo;
     }
 
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        InfoAutor infoAutor = (InfoAutor) o;
-        return Objects.equals(id, infoAutor.id) && Objects.equals(cargo, infoAutor.cargo) && Objects.equals(bio, infoAutor.bio);
+        AutorInfo autorInfo = (AutorInfo) o;
+        return Objects.equals(id, autorInfo.id) && Objects.equals(cargo, autorInfo.cargo) && Objects.equals(bio, autorInfo.bio);
     }
 
     @Override

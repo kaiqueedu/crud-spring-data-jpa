@@ -1,13 +1,13 @@
-package com.kedu.demo_spring_rev_jpa;
+package com.kedu_spring_data_jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoSpringRevJpaApplication {
+public class SpringDataJpaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoSpringRevJpaApplication.class, args);
+		SpringApplication.run(SpringDataJpaApplication.class, args);
 	}
 
 }

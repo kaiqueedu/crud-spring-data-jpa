@@ -1,4 +1,4 @@
-package com.kedu.demo_spring_rev_jpa;
+package com.kedu_spring_data_jpa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.kedu.demo_spring_rev_jpa.entity;
+package com.kedu_spring_data_jpa.entity;
 
 import jakarta.persistence.*;
 
@@ -20,16 +20,16 @@ public class Autor implements Serializable {
     @Column(length = 45, nullable = false)
     private String sobreNome;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
     @JoinColumn(name = "id_info")
-    private InfoAutor infoAutor;
+    private AutorInfo autorInfo;
 
-    public InfoAutor getInfoAutor() {
-        return infoAutor;
+    public AutorInfo getAutorInfo() {
+        return autorInfo;
     }
 
-    public void setInfoAutor(InfoAutor infoAutor) {
-        this.infoAutor = infoAutor;
+    public void setInfoAutor(AutorInfo autorInfo) {
+        this.autorInfo = autorInfo;
     }
 
     public Long getId() {
